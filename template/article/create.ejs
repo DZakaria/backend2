@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Add Articles</title>
+   <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+   
+</body>
+</html>
+
+<div class="container">
+   <h1 style="text-align: center;color: aqua;margin-top: 50px;">ADD ARTICLES</h1>
+
+
+
+ <form action="/articles" method="POST"  enctype="multipart/form-data" >
+<div class="form-group row">
+   <div class="form-group">
+
+      <% if (error && error.path == "title") { %>
+         <div class="alert alert-danger">
+            <%= error.message %> 
+         </div>  
+      <% } %>
+      <label  for="exampleInputEmail1" class="form-label mt-4">Title</label>
+      <input name="title"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add Title">
+    
+      <% if (error && error.path == "content") { %>
+         <div class="alert alert-danger">
+            <%= error.message %> 
+         </div>  
+      <% } %>
+      <label for="exampleInputEmail1" class="form-label mt-4">content</label>
+      <textarea  name="content" rows="4" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="content">
+      </textarea>
+
+      <% if (error && error.path == "url") { %>
+         <div class="alert alert-danger">
+            <%= error.message %> 
+         </div>  
+      <% } %>
+      <label for="exampleInputEmail1" class="form-label mt-4">URL for image</label>
+      <!-- <input name="url" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="url"> -->
+      <input name="url"  class="form-control form-control-sm" id="formFileSm" type="file" />
+
+
+      <% if (error && error.path == "categorie_id") { %>
+         <div class="alert alert-danger">
+            <%= error.message %> 
+         </div>  
+      <% } %>
+      <label for="exampleInputEmail1" class="form-label mt-4">categorie_id</label>
+      <input name="categorie_id" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="categorie_id">
+  
+   </div>
+   
+ </div>
+ <button type="submit" type="button" class="btn btn-success ; my-3">Submit</button>
+ 
+</form>
+</div>

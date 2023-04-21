@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6">
+            <h1>List Of articles</h1>
+
+         </div>
+         <div class="">
+            <a href="/articles/create" class="btn btn-success"> ADD ARTICLES </a>
+
+         </div>
+        
+         <table class="table table-hover my-3">
+    
+            <thead >
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Title</th>
+                <th scope="col">url</th>
+                <th scope="col">content</th>
+                <th scope="col">categorie_id </th>
+                
+              </tr>
+            </thead>
+            <tbody>
+               <% articles.forEach(article =>{ %> 
+               <tr>
+                  <td><%- article.id%></td>
+                  <td><%- article.title%></td>
+                  <td><%- article.url%></td>
+                  <td><%- article.content%></td>
+                  <td><%- article.categorie_id%></td>
+                  <td>
+                     <a href="/articles/delete/<%= article.id %>"  class="btn btn-outline-warning">Delete</a>
+                     <a href="/article/update/<%= article.id %>"  type="button" class="btn btn-outline-primary">Edit</a></td>
+
+               </tr>
+               <% }) %>
+               
+            </tbody>
+
+      </div>
+     <div class="row">
+     <div class="col-md-6">
+      
+      </div>
+     </div>
+   </div>
+
+
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
